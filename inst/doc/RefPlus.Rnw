@@ -1,0 +1,195 @@
+%\VignetteIndexEntry{RefPlus Manual}
+%\VignetteKeywords{Preprocessing, Affymetrix}
+%\VignetteDepends{RefPlus}
+%\VignettePackage{RefPlus}
+
+
+\documentclass[a4paper]{article}
+\usepackage{amsmath,amssymb,pstricks}
+\usepackage{graphicx}
+
+
+%\setlength{\parindent}{0cm} \setlength{\parskip}{18pt}
+
+%\renewcommand{\baselinestretch}{1.1}
+\newcommand{\RMA}{\texttt{RMA}}
+\newcommand{\RMAp}{\texttt{RMA+}}
+\newcommand{\RMApp}{\texttt{RMA++}}
+
+
+\begin{document}
+
+\title{\RMAp\ and \RMApp\ using the \texttt{RefPlus} package}
+\author{Kai-Ming Chang\\  kai-ming.chang@astrazeneca.com\\  kaiming@gmail.com}
+\date{Oct 25, 2006}
+\maketitle
+
+%\setlength{\parskip}{0pt}
+
+%\vspace{12pt}
+
+\begin{abstract}
+\noindent In this vignette, we introduce the ideas behind \RMAp\ and
+\RMApp\ methods, and give examples of using the functions in this
+package.
+\end{abstract}
+\thispagestyle{empty}
+
+
+
+
+\section{Introduction}
+\RMA+\ and \RMA++\ are Affymetrix GeneChip microarray data
+pre-processing methods proposed in Chang, Harbron and South (2006).
+\RMA+\ is an extension to the \RMA\ algorithm by
+Irizarry et al.\ (2004), and \RMApp\ is a further extension based
+on the \RMAp\  method.
+
+The \RMAp\ algorithm calculates the microarray intensities using a pre-stored
+\RMA\ model trained on a reference microarray set (can be standard reference
+microarrays, microarrays from an independent study, or an incomplete set of
+microarrays in a study). \RMAp\ measurements of a microarray can be considered
+as an approximation to the \RMA\ measurements of this microarray when the
+microarray is \RMA ed with the reference set microarrays in one batch.
+
+\RMApp\ measurements of a microarray are the average of multiple \RMAp\
+measurements of a microarray based on several reference sets. If the reference
+sets cover more information of the microarrays to be pre-processed than a single
+reference set does, the \RMApp\ measurements will provide a better approximation
+to the \RMA\ measurements.
+
+\section{\texttt{RMA+}}
+\RMAp\ procedure:
+\begin{enumerate}
+\item Fit the \RMA\ model on the reference set and store the normalizing
+quantiles and the estimated probe effects;
+\item Background correct the probe intensities of the microarrays to be
+pre-processed;
+\item Normalize the background-corrected probe intensities to the normalizing
+quantiles (reference quantiles);
+\item Derive the probeset intensity using the estimated probe effects and
+normalized background-corrected probe intensity data.
+\end{enumerate}
+
+Step 1 can be done using the \texttt{rma.para} function in the package. The
+normalizing quantiles and the estimated probe effects are returned. Step 2-4 can
+be done using the \texttt{rmaplus} function.
+
+Both functions provide an option of skipping the background correction step. In
+this case, the microarrays can be background-corrected independently.
+
+\section{\RMApp}
+RMA++ procedure
+\begin{enumerate}
+\item Fit multiple \RMA\ models on several reference sets and store the
+normalizing quantiles and the estimated probe effects of these reference sets;
+\item Calculate the \RMAp\ measurements of the microarrays of interest for each
+reference set;
+\item Average multiple \RMAp\ measurements of the microarray based on these
+reference sets.
+\end{enumerate}
+
+\section{Example}
+\subsection{\RMAp}
+The Dilution dataset in the \texttt{affydata} package consists of 4 microarray
+samples. 
+<<>>=
+##Use affybatch.example in affy package
+library(RefPlus)
+library(affydata)
+##data(affybatch.example)
+data(Dilution)
+sampleNames(Dilution)
+@
+Firstly, we calculate the \RMA\ measurements of the 4 microarays $Ex0$: 
+
+<<>>=
+##Calculate RMA intensities using the rma function.
+Ex0<-exprs(rma(Dilution))
+@
+Secondly, we form a reference set using the first 3 samples and derive the
+reference quantiles and the reference probe effects:
+
+<<>>=
+##Background correct, estimate the probe effects, and calculate the 
+##RMA intensities using rma.para function.
+Para<-rma.para(Dilution[,1:3],bg=TRUE,exp=TRUE)
+Ex1 <- Para[[3]]
+@
+
+Then, we calculate the \RMAp\ measurements of all microarrays $Ex2$. 
+Figure 1 compares the \RMA\ measurements and the \RMAp\ measurements of these 4
+microarrays.
+
+<<>>=
+##Calculate the RMA+ intensity using rmaplus function. 
+##Ex2 <- rmaplus(affybatch.example, rmapara=Para, bg = TRUE)
+Ex2 <- rmaplus(Dilution, rmapara=Para, bg = TRUE)
+@
+
+\begin{figure}[htbp]
+  \begin{center}
+<<fig=true>>=
+par(mfrow=c(2,2))
+plot(Ex0[,1],Ex2[,1],pch=".",main=sampleNames(Dilution)[1])
+plot(Ex0[,2],Ex2[,2],pch=".",main=sampleNames(Dilution)[2])
+plot(Ex0[,3],Ex2[,3],pch=".",main=sampleNames(Dilution)[3])
+plot(Ex0[,4],Ex2[,4],pch=".",main=sampleNames(Dilution)[4])
+@
+    \caption{\RMA\ (Ex0) vs. \RMAp\ (Ex2).}
+  \end{center}
+\end{figure}
+
+\subsection{\RMApp}
+Now, we form another reference set using the 2-4 samples and calculate a new set
+of \RMAp\ measurements $Ex3$.
+<<>>=
+Para2 <- rma.para(Dilution[,2:4],bg=TRUE,exp=TRUE)
+Ex3 <- rmaplus(Dilution, rmapara=Para2, bg = TRUE)
+@
+
+We can then obtain a set of \RMApp\ measurements by averaging these two sets of
+\RMAp\ measurements $Ex4$. Figure 2 compares the \RMA\ measurements and the
+\RMApp\ measurements of these 4 microarrays.
+<<>>=
+Ex4 <- (Ex2+Ex3)/2
+@
+
+\begin{figure}[htbp]
+  \begin{center}
+<<fig=true>>=
+par(mfrow=c(2,2))
+plot(Ex0[,1],Ex4[,1],pch=".",main=sampleNames(Dilution)[1])
+plot(Ex0[,2],Ex4[,2],pch=".",main=sampleNames(Dilution)[2])
+plot(Ex0[,3],Ex4[,3],pch=".",main=sampleNames(Dilution)[3])
+plot(Ex0[,4],Ex4[,4],pch=".",main=sampleNames(Dilution)[4])
+@
+    \caption{\RMA\ (Ex0) vs. \RMApp\ (Ex4).}
+  \end{center}
+\end{figure}
+
+\newpage
+The root mean squares differences(RMSD) between \RMA\ measurements and 2 \RMAp\
+measurements, are
+<<>>=
+sqrt(mean((Ex0-Ex2)^2))
+sqrt(mean((Ex0-Ex3)^2))
+@
+and the RMSD between \RMA\ measurements and \RMApp\ measurements is
+<<>>=
+sqrt(mean((Ex0-Ex4)^2))
+@
+
+We can see that the \RMApp\ measurements can provide a better approximation to
+the \RMA\ measurements, which is consistant with the comparison between figure 1
+and figure 2.
+
+\begin{thebibliography}{}
+\item[Chang, K.M.,] Harbron, C., South, M.C. (2006) ``An Exploration of
+Extensions to the RMA Algorithm," \textit{submitted}.
+\item[Irizarry,R.A.,] Hobbs,B., Collin,F., Beazer-Barclay,Y.D., Antonellis,K.J.,
+Scherf,U. and Speed,T.P. (2003) ``Exploration, Normalization, and Summaries of
+High density Oligonucleotide Array Probe Level Data," \textit{Biostatistics,} 4,
+249-264.
+\end{thebibliography}
+\end{document}
