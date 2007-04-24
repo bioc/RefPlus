@@ -1,7 +1,7 @@
 Package: RefPlus
 Type: Package
 Title: A function set for the RMA+ and the RMA++ methods.
-Version: 1.4.0
+Version: 1.5.0
 Date: 2006-10-25
 Author: Kai-Ming Chang <Kai-Ming.Chang@astrazeneca.com>
 Maintainer: Kai-Ming Chang <Kai-Ming.Chang@astrazeneca.com>
