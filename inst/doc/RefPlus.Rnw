@@ -15,13 +15,17 @@
 \newcommand{\RMA}{\texttt{RMA}}
 \newcommand{\RMAp}{\texttt{RMA+}}
 \newcommand{\RMApp}{\texttt{RMA++}}
-
+\newcommand{\refRMA}{\texttt{refRMA}}
 
 \begin{document}
 
 \title{\RMAp\ and \RMApp\ using the \texttt{RefPlus} package}
-\author{Kai-Ming Chang\\  kai-ming.chang@astrazeneca.com\\  kaiming@gmail.com}
-\date{Oct 25, 2006}
+\author{Kai-Ming Chang, Chris Harbron, Marie C South\\
+kaiming@mail.kfcc.org.tw\\
+Chris.Harbron@astrazeneca.com\\
+Marie.C.South@astrazeneca.com
+}
+\date{Aug 20, 2006}
 \maketitle
 
 %\setlength{\parskip}{0pt}
@@ -29,21 +33,21 @@
 %\vspace{12pt}
 
 \begin{abstract}
-\noindent In this vignette, we introduce the ideas behind \RMAp\ and
-\RMApp\ methods, and give examples of using the functions in this
-package.
+\noindent In this vignette, we introduce the ideas behind Extrapolation 
+Strategy({\RMAp}) and Extrapolation Averaging ({\RMApp}) methods, and
+give examples of using the functions in this package.
 \end{abstract}
 \thispagestyle{empty}
 
-
-
-
 \section{Introduction}
-\RMA+\ and \RMA++\ are Affymetrix GeneChip microarray data
-pre-processing methods proposed in Chang, Harbron and South (2006).
-\RMA+\ is an extension to the \RMA\ algorithm by
-Irizarry et al.\ (2004), and \RMApp\ is a further extension based
-on the \RMAp\  method.
+The Extrapolation Strategy and Extrapolation Averaging are Affymetrix GeneChip
+microarray data pre-processing methods proposed by Goldstein (2006). These
+methods were independently developed by Chang, Harbron and South (2006),
+termed {\RMAp} and {\RMApp}. Katz et al.\ (2006) also independently developed 
+the {\RMAp} method, termed {\refRMA}. This vignette will use the ``{\RMAp}" and 
+``{\RMApp}" nomenclature for these algorithms. \RMAp\ is an extension to the 
+\RMA\ algorithm by Irizarry et al.\ (2004), and \RMApp\ is a further extension 
+based on the \RMAp\ method.
 
 The \RMAp\ algorithm calculates the microarray intensities using a pre-stored
 \RMA\ model trained on a reference microarray set (can be standard reference
@@ -79,7 +83,7 @@ Both functions provide an option of skipping the background correction step. In
 this case, the microarrays can be background-corrected independently.
 
 \section{\RMApp}
-RMA++ procedure
+\RMApp procedure
 \begin{enumerate}
 \item Fit multiple \RMA\ models on several reference sets and store the
 normalizing quantiles and the estimated probe effects of these reference sets;
@@ -186,10 +190,20 @@ and figure 2.
 
 \begin{thebibliography}{}
 \item[Chang, K.M.,] Harbron, C., South, M.C. (2006) ``An Exploration of
-Extensions to the RMA Algorithm," \textit{submitted}.
+Extensions to the RMA Algorithm," \textit{Available with the RefPlus package}.
+\item[Goldstein,D.R.] ``Partition Resampling and Exploration Averaging: 
+Approximation Methods for Quantifying Gene Expression in Large Numbers of Short 
+Oligonucleotide Arrays," \textit{Bioinformatics,} 22, 2364-2372. 
+\item[Harbron,C.,] Chang,K.M., South,M.C. (2007) ``RefPlus : an R package 
+extending the RMA Algorithm," \textit{Bioinformatics,} 
+doi: 10.1093/bioinformatics/btm357.
 \item[Irizarry,R.A.,] Hobbs,B., Collin,F., Beazer-Barclay,Y.D., Antonellis,K.J.,
 Scherf,U. and Speed,T.P. (2003) ``Exploration, Normalization, and Summaries of
 High density Oligonucleotide Array Probe Level Data," \textit{Biostatistics,} 4,
 249-264.
+\item[Katz,S.,] Irizarry,R.A., Lin,X., Tripputi,M., Porter,M. (2006) 
+``A Summarization Approach for Affymetrix GeneChip Data Using a 
+Reference Training Set from a Large, Biologically Diverse Database," 
+\textit{BMC Bioinformatics,} 7, 464.
 \end{thebibliography}
 \end{document}

@@ -17,7 +17,7 @@ colMedians(mat)
   A vector of column medians is returned.
 }
 \references{}
-\author{Kai-Ming Chang(Kai-Ming.Chang@astrazeneca.com, kaiming@gmail.com)}
+\author{Kai-Ming Chang(kaiming@mail.kfcc.org.tw)}
 \seealso{\code{\link[Biobase]{rowQ}}}
 \examples{ 
 A<-matrix(rnorm(30),10,3)

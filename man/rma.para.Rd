@@ -23,8 +23,8 @@ rma.para(Train, bg = TRUE, exp = FALSE)
   \item{expression}{RMA measurements of \code{Train}.}
 }
 \references{Chang,K.M., Harbron,C., South,M.C. (2006) An Exploration of 
-  Extensions to the RMA Algorithm. (Submitted)}
-\author{ Kai-Ming Chang(Kai-Ming.Chang@astrazeneca.com, kaiming@gmail.com) }
+  Extensions to the RMA Algorithm. Available with the RefPlus package.}
+\author{ Kai-Ming Chang(kaiming@mail.kfcc.org.tw) }
 \note{ The RMA procedure requires a lot of computer memory. 
 }
 \seealso{\code{\link{rmaplus}},\code{\link{rmaref.predict}}}

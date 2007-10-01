@@ -22,8 +22,8 @@ normalize.quantiles2(X, Reference.Quantiles)
   The reference quantile normalized probe intensities.
 }
 \references{Chang,K.M., Harbron,C., South,M.C. (2006) An Exploration of 
-  Extensions to the RMA Algorithm. (Submitted)}
-\author{ Kai-Ming Chang(Kai-Ming.Chang@astrazeneca.com, kaiming@gmail.com) }
+  Extensions to the RMA Algorithm. Available with the RefPlus package.}
+\author{ Kai-Ming Chang(kaiming@mail.kfcc.org.tw) }
 \seealso{\code{\link[affy]{normalize.quantiles}}}
 \examples{
 A<-matrix(rnorm(30),10,3)

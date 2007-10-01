@@ -26,8 +26,8 @@ rmaplus(Future, rmapara, r.q, p.e, bg = TRUE)
   The RMA+ intensities of \code{Future}.
 }
 \references{Chang,K.M., Harbron,C., South,M.C. (2006) An Exploration of 
-  Extensions to the RMA Algorithm. (Submitted)}
-\author{Kai-Ming Chang(Kai-Ming.Chang@astrazeneca.com, kaiming@gmail.com)}
+  Extensions to the RMA Algorithm. Available with the RefPlus package.}
+\author{Kai-Ming Chang(kaiming@mail.kfcc.org.tw)}
 
 \seealso{\code{\link[affyPLM]{PLMset-class}},\code{\link{rma.para}},
   \code{\link{rmaref.predict}}}
