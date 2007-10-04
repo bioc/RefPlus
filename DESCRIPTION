@@ -1,16 +1,15 @@
 Package: RefPlus
 Type: Package
-Title: A function set for the Extrapolation Strategy (RMA+) and Extrapolation 
-	Averaging (RMA++) methods.
-Version: 1.9.0
+Title: A function set for the Extrapolation Strategy (RMA+) and 
+	Extrapolation Averaging (RMA++) methods.
+Version: 1.7.0
 Date: 2007-08-17
-Author: Kai-Ming Chang <Kai-Ming.Chang@astrazeneca.com>,
-	Chris Harbron <Chris.Harbron@astrazeneca.com>,
+Author: Kai-Ming Chang <kaiming@mail.kfcc.org.tw>, 
+	Chris Harbron <Chris.Harbron@astrazeneca.com>, 
 	Marie C South <Marie.C.South@astrazeneca.com>
 Maintainer: Kai-Ming Chang <kaiming@mail.kfcc.org.tw>
 Depends: R (>= 2.5.0), Biobase (>= 1.14.0), affy (>= 1.14.0), affyPLM (>= 1.12.0)
-Suggests: affydata
-Description: The package contains functions for pre-processing Affymetrix data 
-	using the RMA+ and the RMA++ methods.
+Suggests:
+Description: The package contains functions for pre-processing Affymetrix data using the RMA+ and the RMA++ methods.
 License: GPL version 2 or newer
 biocViews: Microarray, OneChannel, Preprocessing
