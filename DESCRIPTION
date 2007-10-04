@@ -9,7 +9,7 @@ Author: Kai-Ming Chang <Kai-Ming.Chang@astrazeneca.com>,
 	Marie C South <Marie.C.South@astrazeneca.com>
 Maintainer: Kai-Ming Chang <kaiming@mail.kfcc.org.tw>
 Depends: R (>= 2.5.0), Biobase (>= 1.14.0), affy (>= 1.14.0), affyPLM (>= 1.12.0)
-Suggests:
+Suggests: affydata
 Description: The package contains functions for pre-processing Affymetrix data 
 	using the RMA+ and the RMA++ methods.
 License: GPL version 2 or newer
