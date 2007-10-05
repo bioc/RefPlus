@@ -16,8 +16,8 @@ based on the RMA+ method. This package depends on the affyPLM package.
 \tabular{ll}{
 Package: \tab RefPlus\cr
 Type: \tab Package\cr
-Version: \tab 1.4.0\cr
-Date: \tab 2007-08-16\cr
+Version: \tab 1.9.0\cr
+Date: \tab 2007-10-05\cr
 License: \tab GPL version 2 or newer\cr
 }
 Use \code{rma.para} to obtain the reference quantiles and the probe effects from
