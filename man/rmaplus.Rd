@@ -27,7 +27,7 @@ rmaplus(Future, rmapara, r.q, p.e, bg = TRUE)
 }
 \references{Chang,K.M., Harbron,C., South,M.C. (2006) An Exploration of 
   Extensions to the RMA Algorithm. Available with the RefPlus package.}
-\author{Kai-Ming Chang(kaiming@mail.kfcc.org.tw)}
+\author{Kai-Ming Chang(kaiming@gmail.com)}
 
 \seealso{\code{\link[affyPLM]{PLMset-class}},\code{\link{rma.para}},
   \code{\link{rmaref.predict}}}

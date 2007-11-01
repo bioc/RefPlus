@@ -25,7 +25,7 @@ kaiming@mail.kfcc.org.tw\\
 Chris.Harbron@astrazeneca.com\\
 Marie.C.South@astrazeneca.com
 }
-\date{Aug 20, 2006}
+\date{Nov 1, 2007}
 \maketitle
 
 %\setlength{\parskip}{0pt}
@@ -195,8 +195,7 @@ Extensions to the RMA Algorithm," \textit{Available with the RefPlus package}.
 Approximation Methods for Quantifying Gene Expression in Large Numbers of Short 
 Oligonucleotide Arrays," \textit{Bioinformatics,} 22, 2364-2372. 
 \item[Harbron,C.,] Chang,K.M., South,M.C. (2007) ``RefPlus : an R package 
-extending the RMA Algorithm," \textit{Bioinformatics,} 
-doi: 10.1093/bioinformatics/btm357.
+extending the RMA Algorithm," \textit{Bioinformatics,} 23, 2493-2494.
 \item[Irizarry,R.A.,] Hobbs,B., Collin,F., Beazer-Barclay,Y.D., Antonellis,K.J.,
 Scherf,U. and Speed,T.P. (2003) ``Exploration, Normalization, and Summaries of
 High density Oligonucleotide Array Probe Level Data," \textit{Biostatistics,} 4,

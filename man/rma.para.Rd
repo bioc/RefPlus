@@ -24,7 +24,7 @@ rma.para(Train, bg = TRUE, exp = FALSE)
 }
 \references{Chang,K.M., Harbron,C., South,M.C. (2006) An Exploration of 
   Extensions to the RMA Algorithm. Available with the RefPlus package.}
-\author{ Kai-Ming Chang(kaiming@mail.kfcc.org.tw) }
+\author{ Kai-Ming Chang(kaiming@gmail.com) }
 \note{ The RMA procedure requires a lot of computer memory. 
 }
 \seealso{\code{\link{rmaplus}},\code{\link{rmaref.predict}}}

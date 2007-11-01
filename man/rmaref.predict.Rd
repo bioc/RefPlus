@@ -19,7 +19,7 @@ rmaref.predict(Future, p.e)
 }
 \references{Chang,K.M., Harbron,C., South,M.C. (2006) An Exploration of 
   Extensions to the RMA Algorithm. Available with the RefPlus package.}
-\author{ Kai-Ming Chang(kaiming@mail.kfcc.org.tw) }
+\author{ Kai-Ming Chang(kaiming@gmail.com) }
 \note{Use the \code{rmaplus} function to normalize \code{Future} to pre-stored 
   reference quantiles and correct the probe effects to obtain the RMA+ 
   intensities. 
