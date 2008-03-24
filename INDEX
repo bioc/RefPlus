@@ -1,6 +1,0 @@
-colMedians              Derive column medians of a numerical matrix
-normalize.quantiles2    Reference quantile normalization
-rma.para                Fitting a RMA model
-rmaplus                 Derive RMA+ intensities
-RMAplus-package         RMA+ method
-rmaref.predict          A function used by the rmaplus function
