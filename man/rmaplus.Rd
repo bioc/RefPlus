@@ -32,19 +32,19 @@ rmaplus(Future, rmapara, r.q, p.e, bg = TRUE)
 \seealso{\code{\link[affyPLM]{PLMset-class}},\code{\link{rma.para}},
   \code{\link{rmaref.predict}}}
 \examples{
-## Use affybatch.example in affy package
-data(affybatch.example)
+## Use Dilution in affy package
+data(Dilution)
 
 ##Calculate RMA intensities using the rma function.
-Ex0<-exprs(rma(affybatch.example))
+Ex0<-exprs(rma(Dilution))
 
 ## Background correct, estimate the probe effects, and calculate the 
 ## RMA intensities using rma.para function.
-Para<-rma.para(affybatch.example,bg=TRUE,exp=TRUE)
+Para<-rma.para(Dilution,bg=TRUE,exp=TRUE)
 Ex1<-Para[[3]]
  
 ## Calculate the RMA+ intensity using rmaplus function. 
-Ex2<-rmaplus(affybatch.example, rmapara=Para, bg = TRUE)
+Ex2<-rmaplus(Dilution, rmapara=Para, bg = TRUE)
 
 }
 \keyword{manip}

@@ -29,15 +29,15 @@ rma.para(Train, bg = TRUE, exp = FALSE)
 }
 \seealso{\code{\link{rmaplus}},\code{\link{rmaref.predict}}}
 \examples{
-## Use affybatch.example in Affy package
-data(affybatch.example)
+## Use Dilution in Affy package
+data(Dilution)
 
 ## Background correct, estimate the probe effects, and calculate the 
 ## RMA intensities using rma.para function.
-Ex<-rma.para(affybatch.example,bg=TRUE,exp=TRUE)
+Ex<-rma.para(Dilution, bg=TRUE,exp=TRUE)
 
 ## Calculate the rma intensities using rma function.
-Ex0<-exprs(rma(affybatch.example))
+Ex0<-exprs(rma(Dilution))
 
 plot(Ex$express[,1],Ex0[,1])
 }
