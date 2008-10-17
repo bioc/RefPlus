@@ -98,10 +98,10 @@ reference sets.
 The Dilution dataset in the \texttt{affydata} package consists of 4 microarray
 samples. 
 <<>>=
-##Use affybatch.example in affy package
+##Use Dilution in affy package
 library(RefPlus)
 library(affydata)
-##data(affybatch.example)
+##data(Dilution)
 data(Dilution)
 sampleNames(Dilution)
 @
@@ -127,7 +127,7 @@ microarrays.
 
 <<>>=
 ##Calculate the RMA+ intensity using rmaplus function. 
-##Ex2 <- rmaplus(affybatch.example, rmapara=Para, bg = TRUE)
+##Ex2 <- rmaplus(Dilution, rmapara=Para, bg = TRUE)
 Ex2 <- rmaplus(Dilution, rmapara=Para, bg = TRUE)
 @
 
