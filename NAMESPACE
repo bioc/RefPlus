@@ -1,0 +1,7 @@
+export(colMedians, normalize.quantiles2, rma.para, rmaplus, rmaref.predict)
+import(Biobase, affy)
+importFrom(preprocessCore, normalize.quantiles)
+
+
+
+

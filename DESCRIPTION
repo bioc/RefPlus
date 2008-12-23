@@ -7,7 +7,8 @@ Author: Kai-Ming Chang <kaiming@gmail.com>,
 	Chris Harbron <Chris.Harbron@astrazeneca.com>,
 	Marie C South <Marie.C.South@astrazeneca.com>
 Maintainer: Kai-Ming Chang <kaiming@gmail.com>
-Depends: R (>= 2.6.0), Biobase (>= 1.16.0), affy (>= 1.16.0), affyPLM (>= 1.14.0)
+Depends: R (>= 2.8.0), Biobase (>= 2.1.0), affy (>= 1.20.0), affyPLM (>= 1.18.0),
+	preprocessCore (>= 1.4.0)
 Suggests: affydata
 Description: The package contains functions for pre-processing Affymetrix data 
 	using the RMA+ and the RMA++ methods.

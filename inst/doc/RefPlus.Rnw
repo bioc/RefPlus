@@ -21,11 +21,11 @@
 
 \title{\RMAp\ and \RMApp\ using the \texttt{RefPlus} package}
 \author{Kai-Ming Chang, Chris Harbron, Marie C South\\
-kaiming@mail.kfcc.org.tw\\
+kaiming@kfsyscc.org\\
 Chris.Harbron@astrazeneca.com\\
 Marie.C.South@astrazeneca.com
 }
-\date{Nov 1, 2007}
+\date{Dec 23, 2008}
 \maketitle
 
 %\setlength{\parskip}{0pt}
