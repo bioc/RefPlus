@@ -29,17 +29,19 @@ rma.para(Train, bg = TRUE, exp = FALSE)
 }
 \seealso{\code{\link{rmaplus}},\code{\link{rmaref.predict}}}
 \examples{
-## Use Dilution in Affy package
-data(Dilution)
+if (require(affydata)) {
+  ## Use Dilution in affydata package
+  data(Dilution)
 
-## Background correct, estimate the probe effects, and calculate the 
-## RMA intensities using rma.para function.
-Ex<-rma.para(Dilution, bg=TRUE,exp=TRUE)
+  ## Background correct, estimate the probe effects, and calculate the 
+  ## RMA intensities using rma.para function.
+  Ex<-rma.para(Dilution, bg=TRUE,exp=TRUE)
 
-## Calculate the rma intensities using rma function.
-Ex0<-exprs(rma(Dilution))
+  ## Calculate the rma intensities using rma function.
+  Ex0<-exprs(rma(Dilution))
 
-plot(Ex$express[,1],Ex0[,1])
+  plot(Ex$express[,1],Ex0[,1])
+}
 }
 \keyword{manip}
 
