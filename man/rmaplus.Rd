@@ -32,20 +32,21 @@ rmaplus(Future, rmapara, r.q, p.e, bg = TRUE)
 \seealso{\code{\link[affyPLM]{PLMset-class}},\code{\link{rma.para}},
   \code{\link{rmaref.predict}}}
 \examples{
-## Use Dilution in affy package
-data(Dilution)
+if (require(affydata)) {
+  ## Use Dilution in affydata package
+  data(Dilution)
 
-##Calculate RMA intensities using the rma function.
-Ex0<-exprs(rma(Dilution))
+  ##Calculate RMA intensities using the rma function.
+  Ex0<-exprs(rma(Dilution))
 
-## Background correct, estimate the probe effects, and calculate the 
-## RMA intensities using rma.para function.
-Para<-rma.para(Dilution,bg=TRUE,exp=TRUE)
-Ex1<-Para[[3]]
- 
-## Calculate the RMA+ intensity using rmaplus function. 
-Ex2<-rmaplus(Dilution, rmapara=Para, bg = TRUE)
+  ## Background correct, estimate the probe effects, and calculate the 
+  ## RMA intensities using rma.para function.
+  Para<-rma.para(Dilution,bg=TRUE,exp=TRUE)
+  Ex1<-Para[[3]]
 
+  ## Calculate the RMA+ intensity using rmaplus function. 
+  Ex2<-rmaplus(Dilution, rmapara=Para, bg = TRUE)
+}
 }
 \keyword{manip}
 
