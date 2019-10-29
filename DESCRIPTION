@@ -2,7 +2,7 @@ Package: RefPlus
 Type: Package
 Title: A function set for the Extrapolation Strategy (RMA+) and Extrapolation 
 	Averaging (RMA++) methods.
-Version: 1.56.0
+Version: 1.57.0
 Author: Kai-Ming Chang <kaiming@gmail.com>,
 	Chris Harbron <Chris.Harbron@astrazeneca.com>,
 	Marie C South <Marie.C.South@astrazeneca.com>
